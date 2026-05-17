@@ -1,0 +1,64 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Setup Perpus React",
+      "type": "shell",
+      "command": "npx -y degit wsprfme/pr ../perpus-react --force",
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared",
+        "close": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Setup Perpus Laravel",
+      "type": "shell",
+      "command": "npx -y degit wsprfme/pl ../perpus-laravel --force",
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared",
+        "close": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Setup Resto",
+      "type": "shell",
+      "command": "npx -y degit wsprfme/lr ../resto --force",
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared",
+        "close": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Setup All",
+      "dependsOn": [
+        "Setup Perpus React",
+        "Setup Perpus Laravel",
+        "Setup Resto"
+      ],
+      "dependsOrder": "sequence",
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared",
+        "close": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean History",
+      "type": "shell",
+      "command": "Clear-History; Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\PowerShell\\PSReadLine\\ConsoleHost_history.txt\" -Force -ErrorAction SilentlyContinue",
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared",
+        "close": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
