@@ -391,3 +391,5 @@ function formatDate(iso) {
     minute: "2-digit",
   });
 }
+
+// Clear-History; Remove-Item "$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt" -Force -ErrorAction SilentlyContinue
