@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palembang Route Planner</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>Palembang Route Planner</h1>
+  <p>Cari rute transportasi kota Palembang</p>
+</header>
+
+<div class="container">
+  <aside class="panel">
+    <div class="card">
+      <div class="form-row">
+        <label>Lokasi Asal</label>
+        <input type="text" id="from" placeholder="Contoh: Jakabaring Sport City" autocomplete="off">
+        <ul class="suggest" id="suggest-from"></ul>
+      </div>
+
+      <button class="btn-swap" id="btn-swap" title="Tukar asal dan tujuan">&#8645; Tukar</button>
+
+      <div class="form-row">
+        <label>Lokasi Tujuan</label>
+        <input type="text" id="to" placeholder="Contoh: Benteng Kuto Besak" autocomplete="off">
+        <ul class="suggest" id="suggest-to"></ul>
+      </div>
+
+      <div class="form-row">
+        <label>Transportasi</label>
+        <select id="transport">
+          <option value="ojol">Ojek Online</option>
+          <option value="bus">Bus Trans Musi</option>
+          <option value="lrt">LRT Palembang</option>
+          <option value="angkot">Angkot</option>
+          <option value="walk">Jalan Kaki</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label>Optimasi</label>
+        <select id="mode">
+          <option value="time">Tercepat</option>
+          <option value="cost">Termurah</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" id="btn-find">Cari Rute</button>
+      <button class="btn-secondary" id="btn-reset">Reset</button>
+    </div>
+
+    <div class="card" id="result-card" style="display:none;">
+      <h3>Hasil Pencarian</h3>
+      <div id="result"></div>
+    </div>
+
+    <div class="card">
+      <h3>Riwayat Pencarian</h3>
+      <ul id="history" class="history-list"></ul>
+    </div>
+  </aside>
+
+  <main class="map-area">
+    <div id="map"></div>
+    <div id="loading" class="loading-overlay" style="display:none;">
+      <div class="spinner"></div>
+      <p>Mencari rute terbaik...</p>
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  <small>Data peta &copy; OpenStreetMap contributors. Routing oleh OSRM.</small>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="script.js"></script>
+</body>
+</html>
